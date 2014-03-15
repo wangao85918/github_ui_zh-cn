@@ -14,7 +14,7 @@ window.onload = function () {
      */
     var lang = {
         'Explore': '扩展',
-        'Gist': 'gist',
+        'Gist': '要点',
         'Blog': '博客',
         'Help': '帮助',
         'Skip to content': '跳转到内容',
@@ -49,7 +49,23 @@ window.onload = function () {
         'Contact': '联系',
         'GitHub Bootcamp': 'GitHub的集训',
         'If you are still new to things, we’ve provided a few walkthroughs to get you started.': '如果你仍然对新的事物，我们提供了让你开始一些演练。',
-        'Popular repositories': '热门版本库'
+        'Popular repositories': '热门版本库',
+        'Pulse':'脉冲',
+        'Settings':'设置',
+        'Repository Name':'仓库名',
+        'Graphs':'图表',
+        'Network':'网络',
+        'contributor':'贡献者',
+        'branch':'分支',
+        'commit':'提交',
+        'releases':'发布',
+        'Notification status':'通知状态',
+        'Unwatch':'点击',
+        'fork':'克隆',
+        'Wiki':'维基',
+        'Code':'代码'
+
+
     };
     /**
      * 执行翻译
@@ -70,11 +86,11 @@ window.onload = function () {
      */
     function Translation(tag) {
         $.each(tag, function (i, n) {
-            var txt = $(n).text();
+            var txt = $(n).html();
             $.each(lang, function (j, m) {
                 // alert(j + '===========' + m);
                 if (j == txt) {
-                    $(n).text(m);
+                    $(n).html(m);
                 }
             });
         });
