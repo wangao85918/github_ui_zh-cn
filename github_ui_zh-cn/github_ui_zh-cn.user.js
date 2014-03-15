@@ -13,6 +13,8 @@ window.onload = function () {
      * @type {{Explore: string, Gist: string, Blog: string, Help: string, Skip to content: string, New repository: string, New organization: string, Create Organization: string, News Feed: string, Pull Requests: string, Issues: string, Stars: string, Set up Git: string, A quick guide to help you get started with Git.: string, Create repositories: string, Repositories are where you’ll work and collaborate on projects.: string, Fork repositories: string, Forking creates a new, unique project from an existing one.: string, Be social: string, Send pull requests, follow friends.Star and watch projects.: string, Repository metadata and plugin support for GitHub Pages: string, All Repositories: string, Public: string, Private: string, Sources: string, Forks: string, Status: string, Training: string, Shop: string, About: string, Terms: string, Privacy: string, Security: string, Contact: string, GitHub Bootcamp: string, If you are still new to things, we’ve provided a few walkthroughs to get you started.: string}}
      */
     var lang = {
+        'This repository':'这个版本库',
+        'public':'公开仓库',
         'Explore': '扩展',
         'Gist': '要点',
         'Blog': '博客',
@@ -72,13 +74,9 @@ window.onload = function () {
      */
     Translation($('a'));
     Translation($('span'));
-    Translation($('h3'));
-    //    var apan = $('span');
-    //    var ad = '';
-    //    $.each(a, function (i, n) {
-    //        ad += $(n).text() + '\n\r'+"====";
-    //    });
-    //    alert(ad);
+
+//    Translation($('h3'));
+
     /**
      * 汉化函数
      * @param tag
@@ -86,11 +84,11 @@ window.onload = function () {
      */
     function Translation(tag) {
         $.each(tag, function (i, n) {
-            var txt = $(n).html();
+            var txt = $(n).text();
             $.each(lang, function (j, m) {
                 // alert(j + '===========' + m);
                 if (j == txt) {
-                    $(n).html(m);
+                    $(n).text(m);
                 }
             });
         });
@@ -98,3 +96,5 @@ window.onload = function () {
 
 
 };
+
+
